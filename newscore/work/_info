@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dW:/ece241/project/scorecounter
+vnewscore
+Z0 !s110 1732405500
+!i10b 1
+!s100 d9Ql;>YH29k9>J2EBR`5T1
+I0B[N[fWAzS]>CIM8hWc6O1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dW:/ece241/project/newscore
+w1732405220
+8W:/ece241/project/newscore/newscore.v
+FW:/ece241/project/newscore/newscore.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1732405500.000000
+!s107 W:/ece241/project/newscore/newscore.v|
+!s90 -reportprogress|300|-work|work|-stats=none|W:/ece241/project/newscore/newscore.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vnewscore_tb
+R0
+!i10b 1
+!s100 BkCAXo;`XSc33>mI5Zfzi3
+Ig>XWooKf6G7H54bQT0cPM2
+R1
+R2
+w1732405252
+8W:/ece241/project/newscore/testbench.v
+FW:/ece241/project/newscore/testbench.v
+L0 3
+R3
+r1
+!s85 0
+31
+R4
+!s107 W:/ece241/project/newscore/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|W:/ece241/project/newscore/testbench.v|
+!i113 1
+R5
+R6
