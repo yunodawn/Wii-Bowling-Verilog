@@ -1,0 +1,95 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.0
+varrow
+Z0 !s110 1731306643
+!i10b 1
+!s100 i5k5aU1Y39eli>2n@7kZi2
+I]KJ]Ka994:3CAcF]Q6Y4B3
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dW:/ece241/project/arrow
+Z3 w1731305156
+Z4 8W:/ece241/project/arrow/arrow.v
+Z5 FW:/ece241/project/arrow/arrow.v
+L0 1
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1731306643.000000
+Z8 !s107 W:/ece241/project/arrow/arrow.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|W:/ece241/project/arrow/arrow.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+varrowFSM
+Z12 !s110 1731306644
+!i10b 1
+!s100 cm;UVXLoz@@XP4=iC<_l20
+Id1koiaGn9K`X?9X`B:<Ee1
+R1
+R2
+R3
+R4
+R5
+L0 49
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+narrow@f@s@m
+vhalfsec_counter
+R0
+!i10b 1
+!s100 LDogWR^l9XnmPe_<N9]SH3
+IhFQWL9YDQla=5gnT>dz@f3
+R1
+R2
+R3
+R4
+R5
+L0 25
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vtestbench
+R12
+!i10b 1
+!s100 B=I?IFT[JdH@BATYF`X1j3
+I6:_:jGe5`330I2XY@ad>U1
+R1
+R2
+w1731305613
+8W:/ece241/project/arrow/testbench.v
+FW:/ece241/project/arrow/testbench.v
+L0 3
+R6
+r1
+!s85 0
+31
+!s108 1731306644.000000
+!s107 W:/ece241/project/arrow/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|W:/ece241/project/arrow/testbench.v|
+!i113 1
+R10
+R11
