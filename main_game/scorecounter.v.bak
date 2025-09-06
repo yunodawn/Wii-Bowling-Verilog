@@ -1,0 +1,24 @@
+module scoreCounter(CLOCK_50, hit, reset, score)
+    input CLOCK_50;            
+    input [4:0] hit;           
+    input reset;               
+    output reg [3:0] score;     
+   
+    reg [4:0] hit_reg;         
+    reg [3:0] score_reg;       
+
+    always @(posedge CLOCK_50 or posedge reset) begin
+        if (reset) begin
+            score_reg <= 4'b0000;  // start of game
+        end 
+		  else begin
+            hit_reg <= hit;
+            score_reg <= hit_reg[0] + hit_reg[1] + hit_reg[2] + hit_reg[3] + hit_reg[4];
+        end
+    end
+
+    
+    always @(*) begin
+        score = score_reg;
+    end
+endmodule
