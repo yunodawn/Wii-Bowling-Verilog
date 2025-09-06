@@ -1,0 +1,33 @@
+|power
+KEY[0] => KEY[0].IN1
+SW[0] => SW[0].IN1
+SW[1] => SW[1].IN1
+SW[2] => SW[2].IN1
+LEDR[0] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[1] <= Equal1.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[2] <= Equal2.DB_MAX_OUTPUT_PORT_TYPE
+LEDR[3] <= Equal3.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|power|powerFSM:comb_12
+clk => pow_lvl[0]~reg0.CLK
+clk => pow_lvl[1]~reg0.CLK
+clk => pow_lvl[2]~reg0.CLK
+reset => pow_lvl.OUTPUTSELECT
+reset => pow_lvl.OUTPUTSELECT
+reset => pow_lvl.OUTPUTSELECT
+up => nstate[1].IN0
+up => Mux0.IN6
+up => Mux0.IN7
+up => Mux2.IN7
+up => Mux1.IN6
+up => Mux1.IN7
+up => Mux1.IN4
+up => Mux1.IN5
+up => Mux2.IN6
+down => nstate[1].IN1
+pow_lvl[0] <= pow_lvl[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pow_lvl[1] <= pow_lvl[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+pow_lvl[2] <= pow_lvl[2]~reg0.DB_MAX_OUTPUT_PORT_TYPE
+
+
