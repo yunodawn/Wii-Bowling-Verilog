@@ -1,0 +1,112 @@
+module score_counter(CLOCK_50, KEY, SW, reset, score, HEX1, HEX0) //replaced hit with KEy and added switch
+input CLOCK_50;   
+input [0:0] KEY;
+input[0:0]SW;           
+input reset;               
+output reg [4:0] score; //max score is 10 x 3 = 30 - 5 bits
+output [6:0] HEX0, HEX1;
+reg [4:0] score_reg;
+
+assign hit = KEY[0];
+assign reset = SW[0];       
+
+always @(posedge CLOCK_50 or posedge reset) begin
+	if (reset) begin
+		score_reg <= 5'b00000;  // start of game
+   end 
+		  
+	else begin
+		if(hit) begin
+			score_reg += 1'b1;
+		end
+    end
+end
+    
+    always @(*) begin
+        score = score_reg;
+    end
+//for seven segments
+always @(*) begin
+//    // all off
+//    HEX0 = 7'b1111111;
+//    HEX1 = 7'b1111111;
+    
+	reg [3:0] ones;
+   reg [3:0] tens;
+   ones = score_reg % 10;
+   tens = score_reg / 10;
+    
+    // display ones 
+    case(ones)
+        4'd0: HEX0 = 7'b1000000; 
+        4'd1: HEX0 = 7'b1111001; 
+        4'd2: HEX0 = 7'b0100100; 
+        4'd3: HEX0 = 7'b0110000;
+        4'd4: HEX0 = 7'b0011001;
+        4'd5: HEX0 = 7'b0010010;
+        4'd6: HEX0 = 7'b0000010;
+        4'd7: HEX0 = 7'b1111000;
+        4'd8: HEX0 = 7'b0000000;
+        4'd9: HEX0 = 7'b0010000;
+        default: HEX0 = 7'b1111111;
+    endcase
+    
+    // display tens
+    case(tens)
+        4'd0: HEX1 = 7'b1000000;
+        4'd1: HEX1 = 7'b1111001;
+        4'd2: HEX1 = 7'b0100100;
+        4'd3: HEX1 = 7'b0110000;
+        default: HEX1 = 7'b1111111;
+    endcase
+end
+endmodule
+
+//module segment_display (score, HEX1, HEX0);
+//	 output [6:0] HEX0;
+//	 output [6:0] HEX1;
+//	 input [4:0] score;
+//
+//    wire [4:0] V;
+//    assign V = score;          
+//
+//    wire [3:0] A;
+//    wire z9, z19;
+//
+//    
+//    assign z9 = (V[4:3] == 2'b00) & (V[2:1] == 2'b10) & V[0];// V > 9
+//    assign z19 = (V[4:3] == 2'b01) | (V[4:3] == 2'b10);//V > 19
+//
+//    assign A[3] = (V[4] & ~V[3]);                               
+//    assign A[2] = (~V[4] & V[3]) | (V[4] & ~V[2]);
+//    assign A[1] = (~V[3] & V[2]);                             
+//    assign A[0] = (V[0] ^ V[1]);                             
+//
+//    
+//    wire [3:0] M;
+//    assign M[0] = (~z19 & ~z9 & V[0]) | (z9 & ~z19 & A[0]) | (z19 & A[0]);
+//    assign M[1] = (~z19 & ~z9 & V[1]) | (z9 & ~z19 & A[1]) | (z19 & A[1]);
+//    assign M[2] = (~z19 & ~z9 & V[2]) | (z9 & ~z19 & A[2]) | (z19 & A[2]);
+//    assign M[3] = (~z19 & ~z9 & V[3]) | (z9 & ~z19 & A[3]) | (z19 & A[3]);
+//
+//    // HEX0
+//    assign HEX0[0] = (~M[3] & ~M[1] & (M[2] ^ M[0])); 
+//    assign HEX0[1] = (~M[3] & M[2] & (M[1] ^ M[0])); 
+//    assign HEX0[2] = (~M[3] & ~M[2] & M[1] & ~M[0]); 
+//    assign HEX0[3] = (~M[3] & (~M[1] & (M[2] ^ M[0])) | (M[2] & M[1] & M[0]));
+//    assign HEX0[4] = (~(~M[0] & ((~M[3] & M[1]) | (M[3] & ~M[2] & ~M[1]) | (~M[1] & ~M[2] & ~M[3]))));  
+//    assign HEX0[5] = ((~M[3] &~M[1] & ~M[2] & M[0]) | (~M[3] & ~M[2] & ~M[1] & M[0]) | (~M[3] & ~M[2] & M[1] & ~M[0]) | (~M[3] & ~M[2] & M[1] &M[0])); 
+//    assign HEX0[6] = (~M[3] & ((M[2] & M[1] & M[0]) | (~M[2] & ~M[1] & (M[0] | ~M[0]))));
+//
+//    // HEX1
+//    assign HEX1[0] = z19 | z9;       
+//    assign HEX1[1] = 0;
+//    assign HEX1[2] = 0;
+//    assign HEX1[3] = z19 | z9;
+//    assign HEX1[4] = z19 | z9;
+//    assign HEX1[5] = z19 | z9;
+//	 assign HEX1[6] = 1;
+//
+//endmodule
+
+

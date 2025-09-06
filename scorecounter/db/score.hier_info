@@ -1,0 +1,62 @@
+|score
+CLOCK_50 => CLOCK_50.IN1
+KEY[0] => KEY[0].IN1
+SW[0] => SW[0].IN1
+score[0] <= scunt:U1.port3
+score[1] <= scunt:U1.port3
+score[2] <= scunt:U1.port3
+score[3] <= scunt:U1.port3
+score[4] <= scunt:U1.port3
+HEX0[0] <= scunt:U1.port5
+HEX0[1] <= scunt:U1.port5
+HEX0[2] <= scunt:U1.port5
+HEX0[3] <= scunt:U1.port5
+HEX0[4] <= scunt:U1.port5
+HEX0[5] <= scunt:U1.port5
+HEX0[6] <= scunt:U1.port5
+HEX1[0] <= scunt:U1.port4
+HEX1[1] <= scunt:U1.port4
+HEX1[2] <= scunt:U1.port4
+HEX1[3] <= scunt:U1.port4
+HEX1[4] <= scunt:U1.port4
+HEX1[5] <= scunt:U1.port4
+HEX1[6] <= scunt:U1.port4
+
+
+|score|scunt:U1
+CLOCK_50 => score_reg[0].CLK
+CLOCK_50 => score_reg[1].CLK
+CLOCK_50 => score_reg[2].CLK
+CLOCK_50 => score_reg[3].CLK
+CLOCK_50 => score_reg[4].CLK
+hit => score_reg[4].ENA
+hit => score_reg[3].ENA
+hit => score_reg[2].ENA
+hit => score_reg[1].ENA
+hit => score_reg[0].ENA
+reset => score_reg[0].ACLR
+reset => score_reg[1].ACLR
+reset => score_reg[2].ACLR
+reset => score_reg[3].ACLR
+reset => score_reg[4].ACLR
+score[0] <= score_reg[0].DB_MAX_OUTPUT_PORT_TYPE
+score[1] <= score_reg[1].DB_MAX_OUTPUT_PORT_TYPE
+score[2] <= score_reg[2].DB_MAX_OUTPUT_PORT_TYPE
+score[3] <= score_reg[3].DB_MAX_OUTPUT_PORT_TYPE
+score[4] <= score_reg[4].DB_MAX_OUTPUT_PORT_TYPE
+HEX1[0] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[1] <= <GND>
+HEX1[2] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[3] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[4] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[5] <= Decoder1.DB_MAX_OUTPUT_PORT_TYPE
+HEX1[6] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+HEX0[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
+
+
