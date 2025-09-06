@@ -1,0 +1,74 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/18.0
+vpower
+!s110 1731389864
+!i10b 1
+!s100 b@_S6nD@5fX01?Xm9fhK^3
+I4FYhWb@MGCCklX_@cEi;]3
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+Z1 dW:/ece241/project/power
+Z2 w1731389059
+Z3 8W:/ece241/project/power/power.v
+Z4 FW:/ece241/project/power/power.v
+L0 1
+Z5 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z6 !s108 1731389864.000000
+Z7 !s107 W:/ece241/project/power/power.v|
+Z8 !s90 -reportprogress|300|-work|work|-stats=none|W:/ece241/project/power/power.v|
+!i113 1
+Z9 o-work work
+Z10 tCvgOpt 0
+vpowerFSM
+Z11 !s110 1731389865
+!i10b 1
+!s100 5HfODn5eO;zoKOCE]m_9d3
+I4KO^G3K<IKh1AYb2d1j=l3
+R0
+R1
+R2
+R3
+R4
+L0 16
+R5
+r1
+!s85 0
+31
+R6
+R7
+R8
+!i113 1
+R9
+R10
+npower@f@s@m
+vtestbench
+R11
+!i10b 1
+!s100 M]hKD=8h4FRcN;C=klNPe1
+IBV;QXNQO?Wm35>P9;>?;P2
+R0
+R1
+w1731389860
+8W:/ece241/project/power/testbench.v
+FW:/ece241/project/power/testbench.v
+L0 3
+R5
+r1
+!s85 0
+31
+!s108 1731389865.000000
+!s107 W:/ece241/project/power/testbench.v|
+!s90 -reportprogress|300|-work|work|-stats=none|W:/ece241/project/power/testbench.v|
+!i113 1
+R9
+R10

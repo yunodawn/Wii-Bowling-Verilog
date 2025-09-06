@@ -1,0 +1,50 @@
+`timescale 1ns / 1ps
+
+module testbench();
+
+    // Parameters
+    parameter CLOCK_PERIOD = 10;  // Clock period in ns
+
+    // Signals
+    reg [2:0] SW;        // Switch inputs
+    reg [0:0] KEY;       // Key input (reset)
+    reg CLOCK_50;        // 50 MHz clock
+    wire [3:0] LEDR;     // LED output
+
+    // Clock generation
+    initial begin
+        CLOCK_50 = 0; // Initialize clock
+    end
+    
+    always begin
+        #((CLOCK_PERIOD) / 2) CLOCK_50 = ~CLOCK_50;  // Toggle clock
+    end
+
+    // Test sequence
+    initial begin
+        // Initialize inputs
+        KEY = 1'b1;   // Reset is initially high (inactive)
+        SW = 3'b000;  // Set all switches to 0 initially
+
+        // Monitor changes to LEDs and power level
+        $monitor("At time %t, pow_lvl = %d, LEDR = %b", $time, SW, LEDR);
+
+        // Apply test stimulus to check FSM behavior
+        #10 SW = 3'b100; // Set 'up' switch to increase power level
+        #20 SW = 3'b000; // Turn off 'up'
+        #30 SW = 3'b100; // Set 'up' again to increase level further
+        #40 SW = 3'b001; // Set 'down' switch to decrease power level
+        #50 SW = 3'b010; // Set 'up' again to increase level
+        #60 SW = 3'b000; // Reset switches
+        #100 KEY = 1'b0;  // Trigger reset
+        #110 KEY = 1'b1;  // Release reset
+    end
+
+    // Instantiate the power module
+    power UUT (
+        .KEY(KEY),
+        .SW(SW),
+        .LEDR(LEDR)
+    );
+
+endmodule
